@@ -59,8 +59,6 @@ $RECYCLE.BIN/
 *.swm
 *.out
 *.pid
-Package-lock.json
-Package.json
 
 
 ############################
@@ -101,6 +99,8 @@ node_modules
 
 ############################
 # Package managers
+package-lock.json
+package.json
 ############################
 
 .yarn/*
