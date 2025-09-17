@@ -59,6 +59,8 @@ $RECYCLE.BIN/
 *.swm
 *.out
 *.pid
+Package-lock.json
+Package.json
 
 
 ############################
