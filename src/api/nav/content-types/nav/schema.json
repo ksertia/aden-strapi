@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navs",
+  "info": {
+    "singularName": "nav",
+    "pluralName": "navs",
+    "displayName": "nav"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "services": {
+      "type": "string"
+    },
+    "advantages": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "login": {
+      "type": "string"
+    }
+  }
+}
