@@ -373,6 +373,87 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHeroHero extends Struct.CollectionTypeSchema {
+  collectionName: 'heroes';
+  info: {
+    displayName: 'hero';
+    pluralName: 'heroes';
+    singularName: 'hero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'feature-component.cta', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hero.hero'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLoginLogin extends Struct.CollectionTypeSchema {
+  collectionName: 'logins';
+  info: {
+    displayName: 'login';
+    pluralName: 'logins';
+    singularName: 'login';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::login.login'> &
+      Schema.Attribute.Private;
+    password: Schema.Attribute.Password & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNavNav extends Struct.CollectionTypeSchema {
+  collectionName: 'navs';
+  info: {
+    displayName: 'nav';
+    pluralName: 'navs';
+    singularName: 'nav';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    advantages: Schema.Attribute.String;
+    contact: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::nav.nav'> &
+      Schema.Attribute.Private;
+    login: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    services: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrenomPrenom extends Struct.CollectionTypeSchema {
   collectionName: 'prenoms';
   info: {
@@ -938,6 +1019,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::hero.hero': ApiHeroHero;
+      'api::login.login': ApiLoginLogin;
+      'api::nav.nav': ApiNavNav;
       'api::prenom.prenom': ApiPrenomPrenom;
       'api::register.register': ApiRegisterRegister;
       'plugin::content-releases.release': PluginContentReleasesRelease;

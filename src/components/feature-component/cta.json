@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_feature_component_ctas",
+  "info": {
+    "displayName": "cta"
+  },
+  "options": {},
+  "attributes": {
+    "portal": {
+      "type": "string"
+    },
+    "learn": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
