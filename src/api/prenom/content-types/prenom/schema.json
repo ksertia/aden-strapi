@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prenoms",
+  "info": {
+    "singularName": "prenom",
+    "pluralName": "prenoms",
+    "displayName": "Prenom"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commons",
+  "info": {
+    "singularName": "common",
+    "pluralName": "commons",
+    "displayName": "common"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "digital_management": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "centralized_files": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_feature_component_agents",
+  "info": {
+    "displayName": "agent"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "feature": {
+      "type": "component",
+      "component": "feature-component.feature",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
