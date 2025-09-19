@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "navs",
+  "collectionName": "commons",
   "info": {
-    "singularName": "nav",
-    "pluralName": "navs",
-    "displayName": "nav"
+    "singularName": "common",
+    "pluralName": "commons",
+    "displayName": "common"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "services": {
+    "digital_management": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -23,23 +23,7 @@
         }
       }
     },
-    "advantages": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "contact": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "login": {
+    "centralized_files": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

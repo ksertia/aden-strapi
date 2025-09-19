@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "navs",
+  "collectionName": "services",
   "info": {
-    "singularName": "nav",
-    "pluralName": "navs",
-    "displayName": "nav"
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "services"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "services": {
+    "title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -23,7 +23,7 @@
         }
       }
     },
-    "advantages": {
+    "subtitle": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -31,21 +31,11 @@
         }
       }
     },
-    "contact": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "login": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+    "item": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-item.service-item",
+      "mappedBy": "service"
     }
   }
 }

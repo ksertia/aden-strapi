@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "navs",
+  "collectionName": "statistiques",
   "info": {
-    "singularName": "nav",
-    "pluralName": "navs",
-    "displayName": "nav"
+    "singularName": "statistique",
+    "pluralName": "statistiques",
+    "displayName": "statistique"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "services": {
+    "satisfaction": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -23,7 +23,7 @@
         }
       }
     },
-    "advantages": {
+    "time_saving": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -31,7 +31,7 @@
         }
       }
     },
-    "contact": {
+    "cases_processed": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -39,7 +39,7 @@
         }
       }
     },
-    "login": {
+    "support_available": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
