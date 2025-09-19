@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "navs",
+  "collectionName": "service_items",
   "info": {
-    "singularName": "nav",
-    "pluralName": "navs",
-    "displayName": "nav"
+    "singularName": "service-item",
+    "pluralName": "service-items",
+    "displayName": "serviceItem"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "services": {
+    "title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -23,29 +23,29 @@
         }
       }
     },
-    "advantages": {
-      "type": "string",
+    "description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "contact": {
-      "type": "string",
+    "features": {
+      "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "feature-component.feature",
+      "repeatable": true
     },
-    "login": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "item"
     }
   }
 }
