@@ -763,6 +763,49 @@ export interface ApiPrenomPrenom extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProduitProduit extends Struct.SingleTypeSchema {
+  collectionName: 'produits';
+  info: {
+    displayName: 'Produit';
+    pluralName: 'produits';
+    singularName: 'produit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::produit.produit'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Titre: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRegisterRegister extends Struct.CollectionTypeSchema {
   collectionName: 'registers';
   info: {
@@ -1461,6 +1504,7 @@ declare module '@strapi/strapi' {
       'api::login.login': ApiLoginLogin;
       'api::nav.nav': ApiNavNav;
       'api::prenom.prenom': ApiPrenomPrenom;
+      'api::produit.produit': ApiProduitProduit;
       'api::register.register': ApiRegisterRegister;
       'api::service-item.service-item': ApiServiceItemServiceItem;
       'api::service.service': ApiServiceService;
