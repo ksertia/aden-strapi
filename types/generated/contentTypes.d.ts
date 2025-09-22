@@ -737,6 +737,46 @@ export interface ApiHeroHero extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
+  collectionName: 'landing_pages';
+  info: {
+    displayName: 'landingPage';
+    pluralName: 'landing-pages';
+    singularName: 'landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    avantages: Schema.Attribute.String;
+    common: Schema.Attribute.String;
+    contact: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.String;
+    footer: Schema.Attribute.String;
+    hero: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-page.landing-page'
+    > &
+      Schema.Attribute.Private;
+    NavBar: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    service_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-item.service-item'
+    >;
+    services: Schema.Attribute.String;
+    statistiques: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNavNav extends Struct.CollectionTypeSchema {
   collectionName: 'navs';
   info: {
@@ -1500,6 +1540,7 @@ declare module '@strapi/strapi' {
       'api::cta.cta': ApiCtaCta;
       'api::footer.footer': ApiFooterFooter;
       'api::hero.hero': ApiHeroHero;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::nav.nav': ApiNavNav;
       'api::produit.produit': ApiProduitProduit;
       'api::service-item.service-item': ApiServiceItemServiceItem;
