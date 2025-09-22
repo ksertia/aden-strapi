@@ -33,12 +33,31 @@ export interface FeatureComponentFeature extends Struct.ComponentSchema {
   };
 }
 
+export interface FeatureComponentForm extends Struct.ComponentSchema {
+  collectionName: 'components_feature_component_forms';
+  info: {
+    displayName: 'form';
+  };
+  attributes: {
+    email: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'votre.email@exemple.fr'>;
+    firstName: Schema.Attribute.String;
+    lastName: Schema.Attribute.String;
+    message: Schema.Attribute.Text;
+    profile: Schema.Attribute.Enumeration<
+      ['selectprofile', 'debtor', 'bailiff', 'lawyer', 'creditor']
+    >;
+    send: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'feature-component.agent': FeatureComponentAgent;
       'feature-component.cta': FeatureComponentCta;
       'feature-component.feature': FeatureComponentFeature;
+      'feature-component.form': FeatureComponentForm;
     }
   }
 }

@@ -373,13 +373,12 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBeneficeItemBeneficeItem
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'benefice_items';
+export interface ApiBenefitItemBenefitItem extends Struct.CollectionTypeSchema {
+  collectionName: 'benefit_items';
   info: {
-    displayName: 'beneficeItem';
-    pluralName: 'benefice-items';
-    singularName: 'benefice-item';
+    displayName: 'benefitItem';
+    pluralName: 'benefit-items';
+    singularName: 'benefit-item';
   };
   options: {
     draftAndPublish: true;
@@ -390,7 +389,7 @@ export interface ApiBeneficeItemBeneficeItem
     };
   };
   attributes: {
-    benefice: Schema.Attribute.Relation<'manyToOne', 'api::benefice.benefice'>;
+    benefit: Schema.Attribute.Relation<'manyToOne', 'api::benefit.benefit'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -403,7 +402,7 @@ export interface ApiBeneficeItemBeneficeItem
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::benefice-item.benefice-item'
+      'api::benefit-item.benefit-item'
     >;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
@@ -418,33 +417,47 @@ export interface ApiBeneficeItemBeneficeItem
   };
 }
 
-export interface ApiBeneficeBenefice extends Struct.CollectionTypeSchema {
-  collectionName: 'benefices';
+export interface ApiBenefitBenefit extends Struct.CollectionTypeSchema {
+  collectionName: 'benefits';
   info: {
-    displayName: 'benefice';
-    pluralName: 'benefices';
-    singularName: 'benefice';
+    displayName: 'benefit';
+    pluralName: 'benefits';
+    singularName: 'benefit';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
+    benefit_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::benefit-item.benefit-item'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    items: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::benefice-item.benefice-item'
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::benefice.benefice'
-    > &
-      Schema.Attribute.Private;
+      'api::benefit.benefit'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -485,6 +498,73 @@ export interface ApiCommonCommon extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::common.common'>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    displayName: 'contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    address: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    form: Schema.Attribute.Component<'feature-component.form', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    >;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -697,32 +777,6 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiLoginLogin extends Struct.CollectionTypeSchema {
-  collectionName: 'logins';
-  info: {
-    displayName: 'login';
-    pluralName: 'logins';
-    singularName: 'login';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    email: Schema.Attribute.Email & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::login.login'> &
-      Schema.Attribute.Private;
-    password: Schema.Attribute.Password & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiNavNav extends Struct.CollectionTypeSchema {
   collectionName: 'navs';
   info: {
@@ -775,34 +829,6 @@ export interface ApiNavNav extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPrenomPrenom extends Struct.CollectionTypeSchema {
-  collectionName: 'prenoms';
-  info: {
-    displayName: 'Prenom';
-    pluralName: 'prenoms';
-    singularName: 'prenom';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::prenom.prenom'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    Title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiProduitProduit extends Struct.SingleTypeSchema {
   collectionName: 'produits';
   info: {
@@ -840,34 +866,6 @@ export interface ApiProduitProduit extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiRegisterRegister extends Struct.CollectionTypeSchema {
-  collectionName: 'registers';
-  info: {
-    displayName: 'register';
-    pluralName: 'registers';
-    singularName: 'register';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::register.register'
-    > &
-      Schema.Attribute.Private;
-    nom: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1535,18 +1533,16 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::benefice-item.benefice-item': ApiBeneficeItemBeneficeItem;
-      'api::benefice.benefice': ApiBeneficeBenefice;
+      'api::benefit-item.benefit-item': ApiBenefitItemBenefitItem;
+      'api::benefit.benefit': ApiBenefitBenefit;
       'api::common.common': ApiCommonCommon;
+      'api::contact.contact': ApiContactContact;
       'api::cta.cta': ApiCtaCta;
       'api::footer.footer': ApiFooterFooter;
       'api::hero.hero': ApiHeroHero;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
-      'api::login.login': ApiLoginLogin;
       'api::nav.nav': ApiNavNav;
-      'api::prenom.prenom': ApiPrenomPrenom;
       'api::produit.produit': ApiProduitProduit;
-      'api::register.register': ApiRegisterRegister;
       'api::service-item.service-item': ApiServiceItemServiceItem;
       'api::service.service': ApiServiceService;
       'api::statistique.statistique': ApiStatistiqueStatistique;
