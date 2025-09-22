@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_contact_placeholders",
+  "info": {
+    "displayName": "placeholder"
+  },
+  "options": {},
+  "attributes": {
+    "firstNamePlaceholder": {
+      "type": "string"
+    },
+    "lastNamePlaceholder": {
+      "type": "string"
+    },
+    "emailPlaceholder": {
+      "type": "string"
+    },
+    "messagePlaceholder": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

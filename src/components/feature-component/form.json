@@ -6,32 +6,32 @@
   "options": {},
   "attributes": {
     "firstName": {
-      "type": "string",
-      "regex": "Votre prénom"
+      "type": "string"
     },
     "lastName": {
-      "type": "string",
-      "regex": "Votre nom"
-    },
-    "email": {
-      "type": "email",
-      "default": "votre.email@exemple.fr"
-    },
-    "profile": {
-      "type": "enumeration",
-      "enum": [
-        "selectprofile",
-        "debtor",
-        "bailiff",
-        "lawyer",
-        "creditor"
-      ]
+      "type": "string"
     },
     "message": {
-      "type": "text"
+      "type": "string"
     },
     "send": {
       "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "component",
+      "component": "contact.placeholder",
+      "repeatable": true
+    },
+    "profileOption": {
+      "type": "component",
+      "component": "contact.profile-option",
+      "repeatable": true
     }
   },
   "config": {}
