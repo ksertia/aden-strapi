@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "benefit_items",
+  "info": {
+    "singularName": "benefit-item",
+    "pluralName": "benefit-items",
+    "displayName": "benefitItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "benefit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::benefit.benefit",
+      "inversedBy": "benefit_items"
+    }
+  }
+}
