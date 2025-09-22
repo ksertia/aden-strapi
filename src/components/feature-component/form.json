@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_feature_component_forms",
+  "info": {
+    "displayName": "form"
+  },
+  "options": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "regex": "Votre prénom"
+    },
+    "lastName": {
+      "type": "string",
+      "regex": "Votre nom"
+    },
+    "email": {
+      "type": "email",
+      "default": "votre.email@exemple.fr"
+    },
+    "profile": {
+      "type": "enumeration",
+      "enum": [
+        "selectprofile",
+        "debtor",
+        "bailiff",
+        "lawyer",
+        "creditor"
+      ]
+    },
+    "message": {
+      "type": "text"
+    },
+    "send": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
