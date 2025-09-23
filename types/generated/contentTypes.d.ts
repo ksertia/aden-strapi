@@ -841,6 +841,37 @@ export interface ApiNavNav extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
+  collectionName: 'payments';
+  info: {
+    displayName: 'Payment';
+    pluralName: 'payments';
+    singularName: 'payment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comingSooDescription: Schema.Attribute.String;
+    comingSooTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::payment.payment'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProduitProduit extends Struct.SingleTypeSchema {
   collectionName: 'produits';
   info: {
@@ -1554,6 +1585,7 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::hero.hero': ApiHeroHero;
       'api::nav.nav': ApiNavNav;
+      'api::payment.payment': ApiPaymentPayment;
       'api::produit.produit': ApiProduitProduit;
       'api::service-item.service-item': ApiServiceItemServiceItem;
       'api::service.service': ApiServiceService;

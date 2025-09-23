@@ -6,12 +6,10 @@
   "options": {},
   "attributes": {
     "firstName": {
-      "type": "string",
-      "regex": "Votre prénom"
+      "type": "string"
     },
     "lastName": {
-      "type": "string",
-      "regex": "Votre nom"
+      "type": "string"
     },
     "email": {
       "type": "email",
