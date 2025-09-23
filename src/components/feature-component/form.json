@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_feature_component_forms",
+  "info": {
+    "displayName": "form"
+  },
+  "options": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "send": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "component",
+      "component": "contact.placeholder",
+      "repeatable": true
+    },
+    "profileOption": {
+      "type": "component",
+      "component": "contact.profile-option",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

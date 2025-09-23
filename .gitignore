@@ -99,8 +99,8 @@ node_modules
 
 ############################
 # Package managers
-package-lock.json
-package.json
+# package-lock.json
+# package.json
 ############################
 
 .yarn/*

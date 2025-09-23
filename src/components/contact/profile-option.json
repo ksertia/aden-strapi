@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_contact_profile_options",
+  "info": {
+    "displayName": "profileOption"
+  },
+  "options": {},
+  "attributes": {
+    "selectProfile": {
+      "type": "string"
+    },
+    "debtor": {
+      "type": "string"
+    },
+    "bailiff": {
+      "type": "string"
+    },
+    "lawyer": {
+      "type": "string"
+    },
+    "creditor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
