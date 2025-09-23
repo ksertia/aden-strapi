@@ -789,6 +789,33 @@ export interface ApiNavNav extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
+  collectionName: 'payments';
+  info: {
+    displayName: 'payment';
+    pluralName: 'payments';
+    singularName: 'payment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::payment.payment'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProduitProduit extends Struct.SingleTypeSchema {
   collectionName: 'produits';
   info: {
@@ -923,6 +950,52 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSidebarSidebar extends Struct.CollectionTypeSchema {
+  collectionName: 'sidebars';
+  info: {
+    displayName: 'sidebar';
+    pluralName: 'sidebars';
+    singularName: 'sidebar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bailiffCases: Schema.Attribute.String;
+    consultations: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dashboard: Schema.Attribute.String;
+    documents: Schema.Attribute.String;
+    documentsProfessional: Schema.Attribute.String;
+    invoices: Schema.Attribute.String;
+    lawyerCases: Schema.Attribute.String;
+    legalActions: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sidebar.sidebar'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.String;
+    logout: Schema.Attribute.String;
+    myCases: Schema.Attribute.String;
+    myCredits: Schema.Attribute.String;
+    notifications: Schema.Attribute.String;
+    payments: Schema.Attribute.String;
+    portfolios: Schema.Attribute.String;
+    profile: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    realTimeTracking: Schema.Attribute.String;
+    reports: Schema.Attribute.String;
+    salesProcess: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1501,9 +1574,11 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::hero.hero': ApiHeroHero;
       'api::nav.nav': ApiNavNav;
+      'api::payment.payment': ApiPaymentPayment;
       'api::produit.produit': ApiProduitProduit;
       'api::service-item.service-item': ApiServiceItemServiceItem;
       'api::service.service': ApiServiceService;
+      'api::sidebar.sidebar': ApiSidebarSidebar;
       'api::statistique.statistique': ApiStatistiqueStatistique;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
