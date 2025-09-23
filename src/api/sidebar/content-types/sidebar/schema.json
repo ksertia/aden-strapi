@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sidebars",
+  "info": {
+    "singularName": "sidebar",
+    "pluralName": "sidebars",
+    "displayName": "sidebar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "string"
+    },
+    "dashboard": {
+      "type": "string"
+    },
+    "myCases": {
+      "type": "string"
+    },
+    "payments": {
+      "type": "string"
+    },
+    "documents": {
+      "type": "string"
+    },
+    "bailiffCases": {
+      "type": "string"
+    },
+    "legalActions": {
+      "type": "string"
+    },
+    "lawyerCases": {
+      "type": "string"
+    },
+    "consultations": {
+      "type": "string"
+    },
+    "reports": {
+      "type": "string"
+    },
+    "myCredits": {
+      "type": "string"
+    },
+    "realTimeTracking": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "string"
+    },
+    "portfolios": {
+      "type": "string"
+    },
+    "invoices": {
+      "type": "string"
+    },
+    "salesProcess": {
+      "type": "string"
+    },
+    "documentsProfessional": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "logout": {
+      "type": "string"
+    }
+  }
+}

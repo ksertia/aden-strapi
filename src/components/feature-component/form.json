@@ -10,6 +10,7 @@
     },
     "lastName": {
       "type": "string"
+<<<<<<< HEAD
     },
     "email": {
       "type": "email",
@@ -24,12 +25,30 @@
         "lawyer",
         "creditor"
       ]
+=======
+>>>>>>> 084aceff7de6b89daca303dadbd539e167f00320
     },
     "message": {
-      "type": "text"
+      "type": "string"
     },
     "send": {
       "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "component",
+      "component": "contact.placeholder",
+      "repeatable": true
+    },
+    "profileOption": {
+      "type": "component",
+      "component": "contact.profile-option",
+      "repeatable": true
     }
   },
   "config": {}
