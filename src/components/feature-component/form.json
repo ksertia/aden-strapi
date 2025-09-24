@@ -10,7 +10,13 @@
     },
     "lastName": {
       "type": "string"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 848982523ccaef404b1de4778e9486443cb9822a
     },
+
+    
     "message": {
       "type": "string"
     },
