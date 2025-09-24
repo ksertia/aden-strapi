@@ -10,24 +10,10 @@
     },
     "lastName": {
       "type": "string"
-<<<<<<< HEAD
+
     },
-    "email": {
-      "type": "email",
-      "default": "votre.email@exemple.fr"
-    },
-    "profile": {
-      "type": "enumeration",
-      "enum": [
-        "selectprofile",
-        "debtor",
-        "bailiff",
-        "lawyer",
-        "creditor"
-      ]
-=======
->>>>>>> 084aceff7de6b89daca303dadbd539e167f00320
-    },
+
+    
     "message": {
       "type": "string"
     },
