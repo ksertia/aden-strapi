@@ -67,7 +67,8 @@
       "configurable": false
     },
     "nodeId": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "firstname": {
       "type": "string"
