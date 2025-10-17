@@ -63,7 +63,7 @@
         }
       },
       "component": "feature-component.form",
-      "repeatable": true
+      "repeatable": false
     }
   }
 }

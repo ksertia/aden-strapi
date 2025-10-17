@@ -535,7 +535,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    form: Schema.Attribute.Component<'feature-component.form', true> &
+    form: Schema.Attribute.Component<'feature-component.form', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -619,6 +619,12 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    cgu: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     contact: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -941,6 +947,12 @@ export interface ApiServiceItemServiceItem extends Struct.CollectionTypeSchema {
         };
       }>;
     features: Schema.Attribute.Component<'feature-component.feature', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    icone: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

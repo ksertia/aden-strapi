@@ -70,9 +70,9 @@ export interface FeatureComponentForm extends Struct.ComponentSchema {
     firstName: Schema.Attribute.String;
     lastName: Schema.Attribute.String;
     message: Schema.Attribute.String;
-    placeholder: Schema.Attribute.Component<'contact.placeholder', true>;
+    placeholder: Schema.Attribute.Component<'contact.placeholder', false>;
     profile: Schema.Attribute.String;
-    profileOption: Schema.Attribute.Component<'contact.profile-option', true>;
+    profileOption: Schema.Attribute.Component<'contact.profile-option', false>;
     send: Schema.Attribute.String;
   };
 }

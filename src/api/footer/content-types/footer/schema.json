@@ -86,6 +86,14 @@
           "localized": true
         }
       }
+    },
+    "cgu": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

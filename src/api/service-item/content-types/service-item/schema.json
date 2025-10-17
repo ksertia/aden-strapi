@@ -46,6 +46,14 @@
       "relation": "manyToOne",
       "target": "api::service.service",
       "inversedBy": "item"
+    },
+    "icone": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

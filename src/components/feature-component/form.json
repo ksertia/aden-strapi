@@ -11,8 +11,6 @@
     "lastName": {
       "type": "string"
     },
-
-    
     "message": {
       "type": "string"
     },
@@ -28,12 +26,12 @@
     "placeholder": {
       "type": "component",
       "component": "contact.placeholder",
-      "repeatable": true
+      "repeatable": false
     },
     "profileOption": {
       "type": "component",
       "component": "contact.profile-option",
-      "repeatable": true
+      "repeatable": false
     }
   },
   "config": {}
