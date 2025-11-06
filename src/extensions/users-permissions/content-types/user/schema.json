@@ -78,6 +78,9 @@
     },
     "Phone": {
       "type": "biginteger"
+    },
+    "companyName": {
+      "type": "string"
     }
   }
 }
