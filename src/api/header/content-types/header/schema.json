@@ -55,7 +55,7 @@
         }
       }
     },
-    "logo": {
+    "Logo": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -65,9 +65,7 @@
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     }
   }
