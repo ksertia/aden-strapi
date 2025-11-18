@@ -712,6 +712,12 @@ export interface ApiHeaderHeader extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::header.header'>;
+    Logo: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     logoText: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
