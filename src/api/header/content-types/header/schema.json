@@ -55,7 +55,7 @@
         }
       }
     },
-    "Logo": {
+    "logoTextPhoto": {
       "type": "media",
       "pluginOptions": {
         "i18n": {

@@ -46,6 +46,14 @@
           "localized": true
         }
       }
+    },
+    "register": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

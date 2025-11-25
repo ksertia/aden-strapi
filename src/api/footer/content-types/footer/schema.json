@@ -87,7 +87,7 @@
         }
       }
     },
-    "cgu": {
+    "name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
