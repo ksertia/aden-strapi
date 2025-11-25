@@ -94,6 +94,14 @@
           "localized": true
         }
       }
+    },
+    "nameDescriptions": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

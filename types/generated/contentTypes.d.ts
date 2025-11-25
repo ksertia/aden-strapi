@@ -678,6 +678,12 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    nameDescriptions: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     privacy: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
